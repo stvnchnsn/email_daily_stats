@@ -1,9 +1,11 @@
 import pickle
 import os
-import smtplib
-import requests
+
 import time
 import numpy as np
+
+import smtplib
+import requests
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 
@@ -34,7 +36,8 @@ class Email:
         self.email_msg = self.subject +self.body
         
         self.smtpObj.sendmail(self.Gmail['email'],self.to_email,self.email_msg)
-        self.Obj.quit()
+        print('email sent')
+        self.smtpObj.quit()
         
 
 email = Email()
